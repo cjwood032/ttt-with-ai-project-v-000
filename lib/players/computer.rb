@@ -9,12 +9,13 @@ class Computer < Player
 #if going second take a random corner
 		elsif board.turn_count== 1 
 			move =[1,3,7,9].sample.to_s
-#if you went first, take a random unoccupied corner square your second turn			
+#if human went first, take a random unoccupied corner square your second turn			
 		elsif board.turn_count== 2 
 				move= [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
 #avoid the corner trap				
 		elsif board.turn_count == 3 && (board.position(1) == board.position(9) || board.position(3) == board.position(7))
         		move = [2,4,6,8].sample.to_s
+    elsif board.turn_count==3 && (board.position)
 		else
 			  Game::WIN_COMBINATIONS.detect do |cmb|
 
