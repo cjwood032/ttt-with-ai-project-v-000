@@ -4,7 +4,7 @@ require_relative '../config/environment'
 
 puts "Would you like to play a game?"
 game=Game.new
-until game.won?
+until game.over?
 	game.play
 end
 
@@ -13,7 +13,7 @@ puts "Would you like to play again(y/n)?"
 again=gets.strip
 	if again== "y"
 		game=Game.new
-		until game.won?
+		until game.over?
 			game.play
 		end
 	else
