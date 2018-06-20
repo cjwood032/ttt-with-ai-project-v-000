@@ -15,6 +15,7 @@ class Computer < Player
 #avoid the corner trap				
 		elsif board.turn_count == 3 && (board.position(1) == board.position(9) || board.position(3) == board.position(7))
         		move = [2,4,6,8].sample.to_s
+#if comp has middle and opponent chooses a side
     elsif board.turn_count==3 && (board.position)
 		else
 			  Game::WIN_COMBINATIONS.detect do |cmb|
