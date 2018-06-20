@@ -12,12 +12,13 @@ class Computer < Player
 #if human went first, take a random unoccupied corner square your second turn			
 		elsif board.turn_count== 2 
 				move= [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
+
+#if comp has middle and opponent chooses a side
+    elsif board.turn_count==3 && (board.taken?(2) || board.taken(4) || board.taken (6) || board.taken(8))
+      
 #avoid the corner trap				
 		elsif board.turn_count == 4 && (board.position(1) == board.position(9) || board.position(3) == board.position(7))
         		move = [2,4,6,8].sample.to_s
-#if comp has middle and opponent chooses a side
-    elsif board.turn_count==3 && (board.taken?(2) || board.taken(4) || board.taken (6) || board.taken(8))
-    
     
     
 		else
