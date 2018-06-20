@@ -14,7 +14,7 @@ class Computer < Player
 				move= [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
 
 #if comp has middle and opponent chooses a side
-    elsif board.turn_count==3 && (board.taken?(2) || board.taken(4) || board.taken (6) || board.taken(8))
+    elsif board.turn_count==3 && (board.taken?(2) || board.taken(4) || board.taken(6) || board.taken(8))
       if board.taken(2) || board.taken(4)
         move=1
       else
