@@ -25,7 +25,7 @@ class Computer < Player
         		move = [2,4,6,8].sample.to_s
     #after the turn 3 setup, execute the trap!
     elsif board.turn_count == 5 && (board.position(1) == board.position(5) || board.position(9) == board.position(5))
-      if (board.position(1) == board.position(5)
+      if (board.position(1) == board.position(5))
         move= "4"
       else
         move="6"
