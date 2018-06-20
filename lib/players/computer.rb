@@ -13,10 +13,13 @@ class Computer < Player
 		elsif board.turn_count== 2 
 				move= [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
 #avoid the corner trap				
-		elsif board.turn_count == 3 && (board.position(1) == board.position(9) || board.position(3) == board.position(7))
+		elsif board.turn_count == 4 && (board.position(1) == board.position(9) || board.position(3) == board.position(7))
         		move = [2,4,6,8].sample.to_s
 #if comp has middle and opponent chooses a side
-    elsif board.turn_count==3 && (board.position)
+    elsif board.turn_count==3 && (board.taken?(2) || board.taken(4) || board.taken (6) || board.taken(8))
+    
+    
+    
 		else
 			  Game::WIN_COMBINATIONS.detect do |cmb|
 
