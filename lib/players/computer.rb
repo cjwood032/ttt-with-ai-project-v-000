@@ -14,12 +14,13 @@ class Computer < Player
 				move= [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
 
 #if comp has middle and opponent chooses a side
-    elsif board.turn_count==3 && (board.taken?(2) || board.taken(4) || board.taken(6) || board.taken(8))
-      if board.taken?(2) || board.taken?(4)
-        move=1
-      else
-        move=9
-      end #end the setup
+#doesn't work yet
+   # elsif board.turn_count==3 && (board.taken?(2) || board.taken(4) || board.taken(6) || board.taken(8))
+    #  if board.taken?(2) || board.taken?(4)
+    #    move=1
+    #  else
+    #    move=9
+     # end #end the setup
 #avoid the corner trap				
 		elsif board.turn_count == 4 && (board.position(1) == board.position(9) || board.position(3) == board.position(7))
         		move = [2,4,6,8].sample.to_s
