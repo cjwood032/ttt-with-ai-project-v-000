@@ -15,7 +15,7 @@ class Computer < Player
 
 #if comp has middle and opponent chooses a side
 #doesn't work yet
-    elsif board.turn_count==3 && (board.taken?(2) || board.taken(4) || board.taken(6) || board.taken(8))
+    elsif board.turn_count==3 && (board.taken?(2) || board.taken?(4) || board.taken?(6) || board.taken?(8))
       if board.taken?(2) || board.taken?(4)
         move="1"
       else
