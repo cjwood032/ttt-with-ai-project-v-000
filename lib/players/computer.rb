@@ -14,22 +14,28 @@ class Computer < Player
 				move= [1, 3, 7, 9].detect{|i| !board.taken?(i)}.to_s
 
 #if comp has middle and opponent chooses a side
-    elsif board.turn_count==3 && (board.taken?(2) || board.taken?(4) || board.taken?(6) || board.taken?(8))
-      if board.taken?(2) || board.taken?(4)
-        move="1"
-      else
-        move="9"
-      end #end the setup
+#too many bugs currently, going to finish other projects then fix
+#    elsif board.turn_count==3 && (board.taken?(2) || board.taken?(4) || board.taken?(6) || board.taken?(8))
+#      if board.taken?(2) || board.taken?(4)
+#        move="1"
+#      else
+#        move="9"
+#      end #end the setup
 #avoid the corner trap				
 		elsif board.turn_count == 4 && (board.position(1) == board.position(9) || board.position(3) == board.position(7))
         		move = [2,4,6,8].sample.to_s
+
+
     #after the turn 3 setup, execute the trap!
-    elsif board.turn_count == 5 && (board.position(1) == board.position(5) || board.position(9) == board.position(5))
-      if (board.position(1) == board.position(5))
-        move= "4"
-      else
-        move="6"
-      end #end the closure of the trap
+    #also commented out until fix
+#    elsif board.turn_count == 5 && (board.position(1) == board.position(5) || board.position(9) == board.position(5))
+#      if (board.position(1) == board.position(5))
+#        move= "4"
+#      else
+#        move="6"
+#      end #end the closure of the trap
+
+
 		else
 			  Game::WIN_COMBINATIONS.detect do |cmb|
 
